@@ -1,0 +1,111 @@
+[
+    {
+        "ID": "rerbagvwsvluk18ys3kzkv7p1",
+        "Version": {
+            "Index": 475
+        },
+        "CreatedAt": "2018-05-15T06:53:40.543690598Z",
+        "UpdatedAt": "2018-05-15T06:53:40.990285999Z",
+        "Spec": {
+            "Name": "xxx",
+            "Labels": {
+                "com.docker.stack.image": "xxx",
+                "com.docker.stack.namespace": "sa"
+            },
+            "TaskTemplate": {
+                "ContainerSpec": {
+                    "Image": "xxx",
+                    "Labels": {
+                        "com.docker.stack.namespace": "sa"
+                    },
+                    "Env": [
+                        "LIVY_URL=http://livy:8998",
+                        "PROCESS_MANAGER_AKKA_HOST=xxx",
+                        "PROCESS_MANAGER_AKKA_PORT=2552",
+                        "RABBIT_MQ_HOST=rabbitmq",
+                        "RABBIT_MQ_PASSWORD=YSIPUNwxYa",
+                        "RABBIT_MQ_PORT=5672",
+                        "RABBIT_MQ_USERNAME=user",
+                        "SPARK_DYNAMIC_NODE_CORES=3",
+                        "SPARK_DYNAMIC_NODE_MEMORY_MB=9523",
+                        "SPARK_NUMBER_OF_NODES=3",
+                        "SPARK_RESOURCES_MODE=DYNAMIC"
+                    ],
+                    "Privileges": {
+                        "CredentialSpec": null,
+                        "SELinuxContext": null
+                    },
+                    "StopGracePeriod": 10000000000,
+                    "Healthcheck": {
+                        "Test": [
+                            "CMD-SHELL",
+                            "curl -f http://localhost:8080/health"
+                        ],
+                        "Interval": 10000000000,
+                        "Timeout": 5000000000,
+                        "Retries": 30
+                    },
+                    "DNSConfig": {},
+                    "Isolation": "default"
+                },
+                "Resources": {},
+                "RestartPolicy": {
+                    "Condition": "any",
+                    "Delay": 5000000000,
+                    "MaxAttempts": 0
+                },
+                "Placement": {},
+                "Networks": [
+                    {
+                        "Target": "j5qfmhg0e0sa3am7fcqi1l1e7",
+                        "Aliases": [
+                            "xxx"
+                        ]
+                    }
+                ],
+                "LogDriver": {
+                    "Name": "json-file",
+                    "Options": {
+                        "max-file": "5",
+                        "max-size": "60m"
+                    }
+                },
+                "ForceUpdate": 0,
+                "Runtime": "container"
+            },
+            "Mode": {
+                "Replicated": {
+                    "Replicas": 1
+                }
+            },
+            "UpdateConfig": {
+                "Parallelism": 1,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "RollbackConfig": {
+                "Parallelism": 1,
+                "FailureAction": "pause",
+                "Monitor": 5000000000,
+                "MaxFailureRatio": 0,
+                "Order": "stop-first"
+            },
+            "EndpointSpec": {
+                "Mode": "vip"
+            }
+        },
+        "Endpoint": {
+            "Spec": {
+                "Mode": "vip"
+            },
+            "VirtualIPs": [
+                {
+                    "NetworkID": "j5qfmhg0e0sa3am7fcqi1l1e7",
+                    "Addr": "10.0.0.27/24"
+                }
+            ]
+        }
+    }
+]
