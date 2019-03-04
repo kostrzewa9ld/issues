@@ -1,0 +1,725 @@
+goroutine 70 [running]:
+github.com/docker/docker/pkg/signal.DumpStacks(0x7f785b68cd60, 0xf, 0x0, 0x0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:83 +0xc7
+github.com/docker/docker/daemon.(*Daemon).setupDumpStackTrap.func1(0xc42006c360, 0x7f785b68cd60, 0xf)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/debugtrap_unix.go:19 +0x8d
+created by github.com/docker/docker/daemon.(*Daemon).setupDumpStackTrap
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/debugtrap_unix.go:17 +0xcb
+
+goroutine 1 [chan receive, 47 minutes]:
+main.(*DaemonCli).start(0xc4203e9200, 0xc42017d030, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/daemon.go:307 +0x1b35
+main.runDaemon(0xc42017d030, 0xc42047f680, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/docker.go:78 +0x78
+main.newDaemonCommand.func1(0xc420092480, 0x7f785ccc04c8, 0x0, 0x0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/docker.go:29 +0x5d
+github.com/docker/docker/vendor/github.com/spf13/cobra.(*Command).execute(0xc420092480, 0xc4200101b0, 0x0, 0x0, 0xc420092480, 0xc4200101b0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/spf13/cobra/command.go:646 +0x44f
+github.com/docker/docker/vendor/github.com/spf13/cobra.(*Command).ExecuteC(0xc420092480, 0x7f785beea200, 0x7f785c173101, 0xc42012b950)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/spf13/cobra/command.go:742 +0x310
+github.com/docker/docker/vendor/github.com/spf13/cobra.(*Command).Execute(0xc420092480, 0xc42012b950, 0x7f785b67f700)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/spf13/cobra/command.go:695 +0x2d
+main.main()
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/docker.go:105 +0xe3
+
+goroutine 18 [syscall]:
+os/signal.signal_recv(0x7f785cc31440)
+	/usr/local/go/src/runtime/sigqueue.go:131 +0xa8
+os/signal.loop()
+	/usr/local/go/src/os/signal/signal_unix.go:22 +0x24
+created by os/signal.init.0
+	/usr/local/go/src/os/signal/signal_unix.go:28 +0x43
+
+goroutine 30 [select]:
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*http2Client).controller(0xc420060600)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:1130 +0x144
+created by github.com/docker/docker/vendor/google.golang.org/grpc/transport.newHTTP2Client
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:280 +0xf4e
+
+goroutine 51 [chan receive]:
+github.com/docker/docker/daemon/graphdriver/devmapper.(*DeviceSet).startDeviceDeletionWorker(0xc4202b0000)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/graphdriver/devmapper/deviceset.go:705 +0xf3
+created by github.com/docker/docker/daemon/graphdriver/devmapper.(*DeviceSet).initMetaData
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/graphdriver/devmapper/deviceset.go:737 +0x1d9
+
+goroutine 40 [syscall, 48 minutes]:
+syscall.Syscall6(0xf7, 0x1, 0x284c, 0xc4204cfda0, 0x1000004, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/syscall/asm_linux_amd64.s:44 +0x5
+os.(*Process).blockUntilWaitable(0xc4203b0f00, 0xc4204cfef8, 0x7f785a1e1834, 0xc420140a78)
+	/usr/local/go/src/os/wait_waitid.go:31 +0xa7
+os.(*Process).wait(0xc4203b0f00, 0xc42001b300, 0xc4204cff28, 0xc420140a01)
+	/usr/local/go/src/os/exec_unix.go:22 +0x44
+os.(*Process).Wait(0xc4203b0f00, 0x7f785c1757f8, 0xc4204cff60, 0x7f785b57ff3d)
+	/usr/local/go/src/os/exec.go:115 +0x2d
+os/exec.(*Cmd).Wait(0xc420152c60, 0xc4204cffb8, 0x7f785ab14d6b)
+	/usr/local/go/src/os/exec/exec.go:446 +0x64
+github.com/docker/docker/libcontainerd.(*remote).startContainerd.func1(0xc420152c60, 0xc420417860)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote_daemon.go:243 +0x31
+created by github.com/docker/docker/libcontainerd.(*remote).startContainerd
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote_daemon.go:241 +0x434
+
+goroutine 29 [IO wait]:
+internal/poll.runtime_pollWait(0x7f7858a0fd30, 0x72, 0x0)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc42034a218, 0x72, 0xffffffffffffff00, 0x7f785cc2abc0, 0x7f785cc1bc08)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc42034a218, 0xc42011e000, 0x8000, 0x8000)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Read(0xc42034a200, 0xc42011e000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:126 +0x18c
+net.(*netFD).Read(0xc42034a200, 0xc42011e000, 0x8000, 0x8000, 0x10, 0x10, 0x7f785bee9b80)
+	/usr/local/go/src/net/fd_unix.go:202 +0x54
+net.(*conn).Read(0xc42041e010, 0xc42011e000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/net.go:176 +0x6f
+bufio.(*Reader).Read(0xc420412180, 0xc42016a038, 0x9, 0x9, 0x7f785a88fe41, 0xc421400ba8, 0x0)
+	/usr/local/go/src/bufio/bufio.go:213 +0x30d
+io.ReadAtLeast(0x7f785cc1dac0, 0xc420412180, 0xc42016a038, 0x9, 0x9, 0x9, 0xc4202c1dc8, 0x20, 0xc42034cf00)
+	/usr/local/go/src/io/io.go:309 +0x88
+io.ReadFull(0x7f785cc1dac0, 0xc420412180, 0xc42016a038, 0x9, 0x9, 0xc4202c1e09, 0xc4219e86c0, 0xc4210e5d40)
+	/usr/local/go/src/io/io.go:327 +0x5a
+github.com/docker/docker/vendor/golang.org/x/net/http2.readFrameHeader(0xc42016a038, 0x9, 0x9, 0x7f785cc1dac0, 0xc420412180, 0x0, 0x0, 0xc4219e8630, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:237 +0x7d
+github.com/docker/docker/vendor/golang.org/x/net/http2.(*Framer).ReadFrame(0xc42016a000, 0xc, 0x0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:492 +0xa6
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*framer).readFrame(0xc4204d0900, 0xc4219e86c0, 0xc4219e86c0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http_util.go:544 +0x31
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*http2Client).reader(0xc420060600)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:1057 +0xc2
+created by github.com/docker/docker/vendor/google.golang.org/grpc/transport.newHTTP2Client
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:250 +0xb8f
+
+goroutine 31 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc.(*addrConn).transportMonitor(0xc420417ba0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:891 +0x1e0
+created by github.com/docker/docker/vendor/google.golang.org/grpc.(*ClientConn).resetAddrConn
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:608 +0x6f1
+
+goroutine 66 [chan receive]:
+github.com/docker/docker/libcontainerd.(*remote).monitorConnection(0xc420417860, 0xc4203e0120)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote_daemon.go:270 +0xa1
+created by github.com/docker/docker/libcontainerd.New
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote_daemon.go:116 +0x603
+
+goroutine 67 [select, 47 minutes, locked to thread]:
+runtime.gopark(0x7f785c1756b0, 0x0, 0x7f785b67f150, 0x6, 0x18, 0x1)
+	/usr/local/go/src/runtime/proc.go:287 +0x132
+runtime.selectgo(0xc420038f50, 0xc42025c060)
+	/usr/local/go/src/runtime/select.go:395 +0x114f
+runtime.ensureSigM.func1()
+	/usr/local/go/src/runtime/signal_unix.go:511 +0x226
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:2337 +0x1
+
+goroutine 68 [chan receive, 47 minutes]:
+github.com/docker/docker/pkg/signal.Trap.func1(0xc42006c2a0, 0x7f785cc22080, 0xc42007e190, 0xc4203fa0c0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:38 +0x67
+created by github.com/docker/docker/pkg/signal.Trap
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/signal/trap.go:36 +0x124
+
+goroutine 44 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc.newClientStream.func3(0x7f785cc49360, 0xc42025b980, 0xc4202756c0, 0xc4200b0840, 0xc420854000)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:241 +0x1cf
+created by github.com/docker/docker/vendor/google.golang.org/grpc.newClientStream
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:240 +0xc7e
+
+goroutine 75 [IO wait, 48 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0fc70, 0x72, 0xffffffffffffffff)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc42040a018, 0x72, 0xc420032c00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc42040a018, 0xffffffffffffff00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Accept(0xc42040a000, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:335 +0x1e4
+net.(*netFD).accept(0xc42040a000, 0xc400000020, 0xc420032e48, 0x7f785a1ef22a)
+	/usr/local/go/src/net/fd_unix.go:238 +0x44
+net.(*UnixListener).accept(0xc4201b06c0, 0x7f785a2f46bc, 0x7f785c02ffa0, 0xc4204d0c30)
+	/usr/local/go/src/net/unixsock_posix.go:162 +0x34
+net.(*UnixListener).Accept(0xc4201b06c0, 0xc420014018, 0x7f785be80340, 0x7f785cbf9030, 0x7f785c13b540)
+	/usr/local/go/src/net/unixsock.go:241 +0x4b
+net/http.(*Server).Serve(0xc420476340, 0x7f785cc3e240, 0xc4201b06c0, 0x0, 0x0)
+	/usr/local/go/src/net/http/server.go:2695 +0x1b4
+net/http.Serve(0x7f785cc3e240, 0xc4201b06c0, 0x7f785cc23440, 0xc4201b06f0, 0x7f785a211f1a, 0x7f785c175530)
+	/usr/local/go/src/net/http/server.go:2323 +0x75
+github.com/docker/docker/daemon.(*Daemon).listenMetricsSock.func1(0x7f785cc3e240, 0xc4201b06c0, 0xc4201b06f0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/metrics_unix.go:31 +0x4d
+created by github.com/docker/docker/daemon.(*Daemon).listenMetricsSock
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/metrics_unix.go:30 +0x195
+
+goroutine 81 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*recvBufferReader).Read(0xc420408400, 0xc4203e02f0, 0x5, 0x5, 0x0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/transport.go:144 +0x2ee
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*Stream).Read(0xc420084240, 0xc4203e02f0, 0x5, 0x5, 0x7f785a1efbcd, 0xc42001c670, 0xc42001c600)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/transport.go:332 +0x5e
+io.ReadAtLeast(0x7f785cc22b00, 0xc420084240, 0xc4203e02f0, 0x5, 0x5, 0x5, 0xc42046bb30, 0xc42033d400, 0x7f785a235b80)
+	/usr/local/go/src/io/io.go:309 +0x88
+io.ReadFull(0x7f785cc22b00, 0xc420084240, 0xc4203e02f0, 0x5, 0x5, 0xc4202b84b0, 0x30, 0x7f785a1efb2a)
+	/usr/local/go/src/io/io.go:327 +0x5a
+github.com/docker/docker/vendor/google.golang.org/grpc.(*parser).recvMsg(0xc4203e02e0, 0x7fffffff, 0xc420418908, 0xc4201881c0, 0x7c, 0xc42046bc68, 0x7f785a209278, 0x7f785c175800)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/rpc_util.go:218 +0x6b
+github.com/docker/docker/vendor/google.golang.org/grpc.recv(0xc4203e02e0, 0x7f785cc3f980, 0x7f785ccc04c8, 0xc420084240, 0x0, 0x0, 0x7f785c02d4c0, 0xc420408480, 0x7fffffff, 0x0, ...)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/rpc_util.go:314 +0x4f
+github.com/docker/docker/vendor/google.golang.org/grpc.(*clientStream).RecvMsg(0xc4200b0420, 0x7f785c02d4c0, 0xc420408480, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:376 +0xdc
+github.com/docker/docker/vendor/github.com/containerd/containerd/api/services/events/v1.(*eventsSubscribeClient).Recv(0xc4202f0140, 0xc42046bf60, 0x1, 0x1)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/containerd/containerd/api/services/events/v1/events.pb.go:213 +0x64
+github.com/docker/docker/libcontainerd.(*client).processEventStream(0xc4201b22a0, 0x7f785cc40140, 0xc420135d00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/client_daemon.go:759 +0x436
+created by github.com/docker/docker/libcontainerd.(*remote).NewClient
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote_daemon.go:136 +0x294
+
+goroutine 78 [IO wait, 48 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0fbb0, 0x72, 0x0)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc42040a298, 0x72, 0xffffffffffffff00, 0x7f785cc2abc0, 0x7f785cc1bc08)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc42040a298, 0xc420280000, 0x8000, 0x8000)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Read(0xc42040a280, 0xc420280000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:126 +0x18c
+net.(*netFD).Read(0xc42040a280, 0xc420280000, 0x8000, 0x8000, 0xc42029dc48, 0x7f785a1efbcd, 0xc42006c9a0)
+	/usr/local/go/src/net/fd_unix.go:202 +0x54
+net.(*conn).Read(0xc42000e4c0, 0xc420280000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/net.go:176 +0x6f
+bufio.(*Reader).Read(0xc42006c960, 0xc420288038, 0x9, 0x9, 0x7f785a1f0f55, 0x7f785a1efb2a, 0xc42029dd30)
+	/usr/local/go/src/bufio/bufio.go:213 +0x30d
+io.ReadAtLeast(0x7f785cc1dac0, 0xc42006c960, 0xc420288038, 0x9, 0x9, 0x9, 0x30, 0x7f785a1efb2a, 0xc42029dda0)
+	/usr/local/go/src/io/io.go:309 +0x88
+io.ReadFull(0x7f785cc1dac0, 0xc42006c960, 0xc420288038, 0x9, 0x9, 0xc420288028, 0x0, 0x3)
+	/usr/local/go/src/io/io.go:327 +0x5a
+github.com/docker/docker/vendor/golang.org/x/net/http2.readFrameHeader(0xc420288038, 0x9, 0x9, 0x7f785cc1dac0, 0xc42006c960, 0x0, 0x7f7800000000, 0xc42025aa80, 0x7f785c1757f8)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:237 +0x7d
+github.com/docker/docker/vendor/golang.org/x/net/http2.(*Framer).ReadFrame(0xc420288000, 0xc4201b1380, 0x7f785cc22bc0, 0xc42024a100, 0xc42024a100)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:492 +0xa6
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*framer).readFrame(0xc4201b1260, 0xc42021a6a0, 0xc42021a6a0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http_util.go:544 +0x31
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*http2Client).reader(0xc42025ac00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:1057 +0xc2
+created by github.com/docker/docker/vendor/google.golang.org/grpc/transport.newHTTP2Client
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:250 +0xb8f
+
+goroutine 79 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*http2Client).controller(0xc42025ac00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:1130 +0x144
+created by github.com/docker/docker/vendor/google.golang.org/grpc/transport.newHTTP2Client
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:280 +0xf4e
+
+goroutine 80 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc.(*addrConn).transportMonitor(0xc4202741a0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:891 +0x1e0
+created by github.com/docker/docker/vendor/google.golang.org/grpc.(*ClientConn).resetAddrConn
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:608 +0x6f1
+
+goroutine 82 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc.newClientStream.func3(0x7f785cc49360, 0xc42025ac00, 0xc420274000, 0xc4200b0420, 0xc420084240)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:241 +0x1cf
+created by github.com/docker/docker/vendor/google.golang.org/grpc.newClientStream
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:240 +0xc7e
+
+goroutine 54 [sleep]:
+time.Sleep(0x3b9aca00)
+	/usr/local/go/src/runtime/time.go:65 +0x136
+github.com/docker/docker/daemon/stats.(*Collector).Run(0xc42025f380)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/stats/collector.go:63 +0x1ac
+created by github.com/docker/docker/daemon.(*Daemon).newStatsCollector
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/stats_collector.go:24 +0x81
+
+goroutine 55 [chan receive, 3 minutes]:
+github.com/docker/docker/daemon.(*Daemon).execCommandGC(0xc420162000)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/exec.go:291 +0x15a
+created by github.com/docker/docker/daemon.NewDaemon
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/daemon.go:887 +0x24e4
+
+goroutine 61 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*recvBufferReader).Read(0xc420134240, 0xc4208400b0, 0x5, 0x5, 0x0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/transport.go:144 +0x2ee
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*Stream).Read(0xc420854000, 0xc4208400b0, 0x5, 0x5, 0xc4204520a0, 0xc42001b370, 0xc42001b300)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/transport.go:332 +0x5e
+io.ReadAtLeast(0x7f785cc22b00, 0xc420854000, 0xc4208400b0, 0x5, 0x5, 0x5, 0xc42025b600, 0xc420851b00, 0xc420851b98)
+	/usr/local/go/src/io/io.go:309 +0x88
+io.ReadFull(0x7f785cc22b00, 0xc420854000, 0xc4208400b0, 0x5, 0x5, 0x0, 0x0, 0x7f7858a72c90)
+	/usr/local/go/src/io/io.go:327 +0x5a
+github.com/docker/docker/vendor/google.golang.org/grpc.(*parser).recvMsg(0xc4208400a0, 0x7fffffff, 0xc42000c0a0, 0xc420418880, 0x74, 0xc420851c68, 0x7f785a209278, 0x7f785c175800)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/rpc_util.go:218 +0x6b
+github.com/docker/docker/vendor/google.golang.org/grpc.recv(0xc4208400a0, 0x7f785cc3f980, 0x7f785ccc04c8, 0xc420854000, 0x0, 0x0, 0x7f785c02d4c0, 0xc420134700, 0x7fffffff, 0x0, ...)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/rpc_util.go:314 +0x4f
+github.com/docker/docker/vendor/google.golang.org/grpc.(*clientStream).RecvMsg(0xc4200b0840, 0x7f785c02d4c0, 0xc420134700, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/stream.go:376 +0xdc
+github.com/docker/docker/vendor/github.com/containerd/containerd/api/services/events/v1.(*eventsSubscribeClient).Recv(0xc420844060, 0xc420851f60, 0x1, 0x1)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/containerd/containerd/api/services/events/v1/events.pb.go:213 +0x64
+github.com/docker/docker/libcontainerd.(*client).processEventStream(0xc42016f110, 0x7f785cc40140, 0xc420135d00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/client_daemon.go:759 +0x436
+created by github.com/docker/docker/libcontainerd.(*remote).NewClient
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/libcontainerd/remote_daemon.go:136 +0x294
+
+goroutine 58 [IO wait, 33 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0f970, 0x72, 0x0)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc42040a518, 0x72, 0xffffffffffffff00, 0x7f785cc2abc0, 0x7f785cc1bc08)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc42040a518, 0xc420828000, 0x8000, 0x8000)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Read(0xc42040a500, 0xc420828000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:126 +0x18c
+net.(*netFD).Read(0xc42040a500, 0xc420828000, 0x8000, 0x8000, 0x10, 0x10, 0x7f785bee9b80)
+	/usr/local/go/src/net/fd_unix.go:202 +0x54
+net.(*conn).Read(0xc42000f8d8, 0xc420828000, 0x8000, 0x8000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/net.go:176 +0x6f
+bufio.(*Reader).Read(0xc420141020, 0xc420288498, 0x9, 0x9, 0x7f785a88fe41, 0xc421b61e38, 0x0)
+	/usr/local/go/src/bufio/bufio.go:213 +0x30d
+io.ReadAtLeast(0x7f785cc1dac0, 0xc420141020, 0xc420288498, 0x9, 0x9, 0x9, 0xc420299dc8, 0x20, 0xc42025b800)
+	/usr/local/go/src/io/io.go:309 +0x88
+io.ReadFull(0x7f785cc1dac0, 0xc420141020, 0xc420288498, 0x9, 0x9, 0xc420299e09, 0xc421b61f50, 0xc4210e4240)
+	/usr/local/go/src/io/io.go:327 +0x5a
+github.com/docker/docker/vendor/golang.org/x/net/http2.readFrameHeader(0xc420288498, 0x9, 0x9, 0x7f785cc1dac0, 0xc420141020, 0x0, 0x0, 0xc421b61f20, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:237 +0x7d
+github.com/docker/docker/vendor/golang.org/x/net/http2.(*Framer).ReadFrame(0xc420288460, 0xc, 0x0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/golang.org/x/net/http2/frame.go:492 +0xa6
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*framer).readFrame(0xc420826d20, 0xc421b61f50, 0xc421b61f50, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http_util.go:544 +0x31
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*http2Client).reader(0xc42025b980)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:1057 +0xc2
+created by github.com/docker/docker/vendor/google.golang.org/grpc/transport.newHTTP2Client
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:250 +0xb8f
+
+goroutine 59 [select, 33 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc/transport.(*http2Client).controller(0xc42025b980)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:1130 +0x144
+created by github.com/docker/docker/vendor/google.golang.org/grpc/transport.newHTTP2Client
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/transport/http2_client.go:280 +0xf4e
+
+goroutine 60 [select, 48 minutes]:
+github.com/docker/docker/vendor/google.golang.org/grpc.(*addrConn).transportMonitor(0xc420275860)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:891 +0x1e0
+created by github.com/docker/docker/vendor/google.golang.org/grpc.(*ClientConn).resetAddrConn
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/google.golang.org/grpc/clientconn.go:608 +0x6f1
+
+goroutine 83 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).watchLoop(0xc42011a400)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/store.go:452 +0xfb
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).startWatch
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/store.go:469 +0x110
+
+goroutine 465 [select]:
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).pushPullTrigger(0xc421a12a00, 0xc42251ae40)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/state.go:160 +0x220
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).schedule
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/state.go:105 +0x351
+
+goroutine 460 [IO wait, 47 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0f2b0, 0x72, 0x0)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc421cbb198, 0x72, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc421cbb198, 0xc4228ee000, 0x10000, 0x10000)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).ReadFrom(0xc421cbb180, 0xc4228ee000, 0x10000, 0x10000, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:170 +0x19c
+net.(*netFD).readFrom(0xc421cbb180, 0xc4228ee000, 0x10000, 0x10000, 0xc421c63f78, 0xc422051080, 0xc42203f940, 0xc421c63e78, 0x7f785a1eeac3)
+	/usr/local/go/src/net/fd_unix.go:208 +0x60
+net.(*UDPConn).readFrom(0xc421db9450, 0xc4228ee000, 0x10000, 0x10000, 0xc421c63e38, 0xc421c63e90, 0x101, 0xc421c63eb0)
+	/usr/local/go/src/net/udpsock_posix.go:47 +0x6c
+net.(*UDPConn).ReadFrom(0xc421db9450, 0xc4228ee000, 0x10000, 0x10000, 0x10000, 0x10000, 0xc4222b6750, 0x0, 0x0)
+	/usr/local/go/src/net/udpsock.go:118 +0x74
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*NetTransport).udpListen(0xc4204da460, 0xc421db9450)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/net_transport.go:247 +0xca
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.NewNetTransport
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/net_transport.go:110 +0x9c3
+
+goroutine 464 [select]:
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).triggerFunc(0xc421a12a00, 0x3b9aca00, 0xc422273da0, 0xc42251ae40, 0xc420401eb0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/state.go:133 +0x1d2
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).schedule
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/state.go:99 +0x406
+
+goroutine 174 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork/drivers/overlay.(*driver).peerOpRoutine(0xc42013a300, 0x7f785cc40140, 0xc420310c40, 0xc42006f260)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/drivers/overlay/peerdb.go:278 +0x139
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork/drivers/overlay.Init
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/drivers/overlay/overlay.go:78 +0x237
+
+goroutine 463 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).packetHandler(0xc421a12a00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/net.go:376 +0x11c
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.newMemberlist
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/memberlist.go:180 +0x4df
+
+goroutine 1458 [IO wait, 47 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0fa30, 0x72, 0x0)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc4220bdb18, 0x72, 0xffffffffffffff00, 0x7f785cc2abc0, 0x7f785cc1bc08)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc4220bdb18, 0xc421b47000, 0x1000, 0x1000)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Read(0xc4220bdb00, 0xc421b47000, 0x1000, 0x1000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:126 +0x18c
+net.(*netFD).Read(0xc4220bdb00, 0xc421b47000, 0x1000, 0x1000, 0x7f785b67e034, 0xc421aad8b8, 0xc4227cc0d0)
+	/usr/local/go/src/net/fd_unix.go:202 +0x54
+net.(*conn).Read(0xc421db8c30, 0xc421b47000, 0x1000, 0x1000, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/net.go:176 +0x6f
+github.com/docker/docker/cmd/dockerd/hack.(*MalformedHostHeaderOverrideConn).Read(0xc42249d860, 0xc421b47000, 0x1000, 0x1000, 0x2, 0x1, 0x7f785a34c62f)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/hack/malformed_host_override.go:110 +0x86
+net/http.(*connReader).Read(0xc4219b2690, 0xc421b47000, 0x1000, 0x1000, 0xc42236d340, 0x7f785cc1b5ae, 0x2)
+	/usr/local/go/src/net/http/server.go:753 +0x107
+bufio.(*Reader).fill(0xc42139c960)
+	/usr/local/go/src/bufio/bufio.go:97 +0x11c
+bufio.(*Reader).ReadSlice(0xc42139c960, 0x7f785a208f0a, 0x7f785a27fedf, 0xc421aada20, 0xfffffffe0e7a0b6d, 0xc421aada60, 0x7f785a280179)
+	/usr/local/go/src/bufio/bufio.go:338 +0x2e
+bufio.(*Reader).ReadLine(0xc42139c960, 0x100, 0xf8, 0x7f785c146a80, 0x0, 0x220021aadaa8, 0xf8)
+	/usr/local/go/src/bufio/bufio.go:367 +0x36
+net/textproto.(*Reader).readLineSlice(0xc421bc8f60, 0xc421aadb20, 0xc421aadb20, 0x7f785a1ef22a, 0x100, 0x7f785c146a80)
+	/usr/local/go/src/net/textproto/reader.go:55 +0x72
+net/textproto.(*Reader).ReadLine(0xc421bc8f60, 0xc42238ee00, 0x0, 0x0, 0xc421aadba8)
+	/usr/local/go/src/net/textproto/reader.go:36 +0x2d
+net/http.readRequest(0xc42139c960, 0x0, 0xc42238ee00, 0x0, 0x0)
+	/usr/local/go/src/net/http/request.go:925 +0x9b
+net/http.(*conn).readRequest(0xc42141a780, 0x7f785cc40140, 0xc421adf780, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/http/server.go:933 +0x17e
+net/http.(*conn).serve(0xc42141a780, 0x7f785cc40140, 0xc421adf780)
+	/usr/local/go/src/net/http/server.go:1739 +0x510
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2720 +0x28a
+
+goroutine 794 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).handleTableEvents(0xc42011a400, 0xc4213e95e0, 0xc421cc10d0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/agent.go:816 +0x11b
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*network).addDriverWatches
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/agent.go:776 +0x402
+
+goroutine 1455 [IO wait, 47 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0f370, 0x72, 0x0)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc422465698, 0x72, 0xffffffffffffff00, 0x7f785cc2abc0, 0x7f785cc1bc08)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc422465698, 0xc421990e00, 0x1, 0x1)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Read(0xc422465680, 0xc421990eb1, 0x1, 0x1, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:126 +0x18c
+net.(*netFD).Read(0xc422465680, 0xc421990eb1, 0x1, 0x1, 0x0, 0x7f785cc22e00, 0x7f785ccbf9c0)
+	/usr/local/go/src/net/fd_unix.go:202 +0x54
+net.(*conn).Read(0xc421f94b58, 0xc421990eb1, 0x1, 0x1, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/net.go:176 +0x6f
+github.com/docker/docker/cmd/dockerd/hack.(*MalformedHostHeaderOverrideConn).Read(0xc4214482c0, 0xc421990eb1, 0x1, 0x1, 0xc4213ed4f0, 0x7f785cc23101, 0xc4213ed4f0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/hack/malformed_host_override.go:110 +0x86
+net/http.(*connReader).backgroundRead(0xc421990ea0)
+	/usr/local/go/src/net/http/server.go:660 +0x64
+created by net/http.(*connReader).startBackgroundRead
+	/usr/local/go/src/net/http/server.go:656 +0xda
+
+goroutine 178 [IO wait, 48 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0faf0, 0x72, 0xffffffffffffffff)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc42034a398, 0x72, 0xc42086cd00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc42034a398, 0xffffffffffffff00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Accept(0xc42034a380, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:335 +0x1e4
+net.(*netFD).accept(0xc42034a380, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/fd_unix.go:238 +0x44
+net.(*UnixListener).accept(0xc420b98bd0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/unixsock_posix.go:162 +0x34
+net.(*UnixListener).Accept(0xc420b98bd0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/net/unixsock.go:241 +0x4b
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).acceptClientConnections(0xc42011a400, 0xc420411140, 0x5c, 0x7f785cc3e240, 0xc420b98bd0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/sandbox_externalkey_unix.go:127 +0x3d
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).startExternalKeyListener
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/sandbox_externalkey_unix.go:121 +0x1ea
+
+goroutine 492 [chan receive, 47 minutes]:
+github.com/docker/docker/daemon.(*Daemon).startIngressWorker.func1(0xc420162000)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/network.go:147 +0x5e
+created by github.com/docker/docker/daemon.(*Daemon).startIngressWorker
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/network.go:143 +0x74
+
+goroutine 241 [chan receive, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).clusterAgentInit(0xc42011a400)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/controller.go:321 +0x79
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).SetClusterProvider
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/controller.go:276 +0xde
+
+goroutine 462 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).packetListen(0xc421a12a00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/net.go:289 +0x16b
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.newMemberlist
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/memberlist.go:179 +0x4ba
+
+goroutine 459 [IO wait, 47 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0f670, 0x72, 0xffffffffffffffff)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc421cbb118, 0x72, 0xc4202c3500, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc421cbb118, 0xffffffffffffff00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Accept(0xc421cbb100, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:335 +0x1e4
+net.(*netFD).accept(0xc421cbb100, 0xc421db9f20, 0x0, 0xc42251ad78)
+	/usr/local/go/src/net/fd_unix.go:238 +0x44
+net.(*TCPListener).accept(0xc421db9440, 0x7f785a1e1203, 0xc42251ad20, 0xc4202c37a0)
+	/usr/local/go/src/net/tcpsock_posix.go:136 +0x30
+net.(*TCPListener).AcceptTCP(0xc421db9440, 0xc4202c37a0, 0x0, 0x0)
+	/usr/local/go/src/net/tcpsock.go:234 +0x4b
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*NetTransport).tcpListen(0xc4204da460, 0xc421db9440)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/net_transport.go:225 +0x61
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.NewNetTransport
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/net_transport.go:109 +0xa48
+
+goroutine 461 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).streamListen(0xc421a12a00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/net.go:196 +0x150
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.newMemberlist
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/memberlist.go:178 +0x495
+
+goroutine 458 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/go-events.(*Broadcaster).run(0xc421201e50)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/broadcast.go:117 +0x414
+created by github.com/docker/docker/vendor/github.com/docker/go-events.NewBroadcaster
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/broadcast.go:39 +0x1b1
+
+goroutine 514 [select]:
+github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).triggerFunc(0xc421a12a00, 0xbebc200, 0xc422273e00, 0xc42251ae40, 0xc420401ec0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/state.go:133 +0x1d2
+created by github.com/docker/docker/vendor/github.com/hashicorp/memberlist.(*Memberlist).schedule
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/hashicorp/memberlist/state.go:111 +0x1fb
+
+goroutine 515 [select]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).triggerFunc(0xc421a12900, 0x12a05f200, 0xc422273e60, 0xc42251aea0, 0xc420401ee0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:246 +0x1d2
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).clusterInit
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:171 +0x90e
+
+goroutine 516 [select]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).triggerFunc(0xc421a12900, 0xbebc200, 0xc422273ec0, 0xc42251aea0, 0xc420401ef0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:246 +0x1d2
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).clusterInit
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:171 +0x90e
+
+goroutine 517 [select]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).triggerFunc(0xc421a12900, 0x6fc23ac00, 0xc422273f20, 0xc42251aea0, 0xc420401f00)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:246 +0x1d2
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).clusterInit
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:171 +0x90e
+
+goroutine 518 [select]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).triggerFunc(0xc421a12900, 0x3b9aca00, 0xc422273f80, 0xc42251aea0, 0xc420401f10)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:246 +0x1d2
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).clusterInit
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:171 +0x90e
+
+goroutine 519 [select, 43 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).triggerFunc(0xc421a12900, 0x68c61714000, 0xc422374000, 0xc42251aea0, 0xc420401f20)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:246 +0x1d2
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb.(*NetworkDB).clusterInit
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/networkdb/cluster.go:171 +0x90e
+
+goroutine 520 [semacquire, 47 minutes]:
+sync.runtime_notifyListWait(0xc4221aa450, 0xc400000004)
+	/usr/local/go/src/runtime/sema.go:507 +0x114
+sync.(*Cond).Wait(0xc4221aa440)
+	/usr/local/go/src/sync/cond.go:56 +0x82
+github.com/docker/docker/vendor/github.com/docker/go-events.(*Queue).next(0xc42237ba10, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:103 +0x87
+github.com/docker/docker/vendor/github.com/docker/go-events.(*Queue).run(0xc42237ba10)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:68 +0x34
+created by github.com/docker/docker/vendor/github.com/docker/go-events.NewQueue
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:29 +0x14d
+
+goroutine 521 [semacquire, 47 minutes]:
+sync.runtime_notifyListWait(0xc4221aa4d0, 0xc400000004)
+	/usr/local/go/src/runtime/sema.go:507 +0x114
+sync.(*Cond).Wait(0xc4221aa4c0)
+	/usr/local/go/src/sync/cond.go:56 +0x82
+github.com/docker/docker/vendor/github.com/docker/go-events.(*Queue).next(0xc42237bad0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:103 +0x87
+github.com/docker/docker/vendor/github.com/docker/go-events.(*Queue).run(0xc42237bad0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:68 +0x34
+created by github.com/docker/docker/vendor/github.com/docker/go-events.NewQueue
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:29 +0x14d
+
+goroutine 522 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).handleTableEvents(0xc42011a400, 0xc421998d00, 0xc420401f80)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/agent.go:816 +0x11b
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).agentInit
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/agent.go:320 +0x58d
+
+goroutine 523 [select, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).handleTableEvents(0xc42011a400, 0xc421998d20, 0xc420401f90)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/agent.go:816 +0x11b
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).agentInit
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/agent.go:321 +0x5fb
+
+goroutine 1298 [IO wait]:
+internal/poll.runtime_pollWait(0x7f7858946490, 0x72, 0x0)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc42183a498, 0x72, 0xc422add200, 0x28, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc42183a498, 0xc421db1a00, 0x200, 0x200)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).ReadMsg(0xc42183a480, 0xc421db1a00, 0x200, 0x200, 0xc422add2c0, 0x28, 0x28, 0x0, 0x0, 0x0, ...)
+	/usr/local/go/src/internal/poll/fd_unix.go:194 +0x224
+net.(*netFD).readMsg(0xc42183a480, 0xc421db1a00, 0x200, 0x200, 0xc422add2c0, 0x28, 0x28, 0x4ac0250d5a8, 0x10, 0xc421d979a0, ...)
+	/usr/local/go/src/net/fd_unix.go:214 +0x92
+net.(*UDPConn).readMsg(0xc421db83f0, 0xc421db1a00, 0x200, 0x200, 0xc422add2c0, 0x28, 0x28, 0xc42005f000, 0x7f7858a6b000, 0x0, ...)
+	/usr/local/go/src/net/udpsock_posix.go:59 +0x93
+net.(*UDPConn).ReadMsgUDP(0xc421db83f0, 0xc421db1a00, 0x200, 0x200, 0xc422add2c0, 0x28, 0x28, 0x72, 0xc42005f000, 0x7f7858a6b000, ...)
+	/usr/local/go/src/net/udpsock.go:139 +0xac
+github.com/docker/docker/vendor/github.com/miekg/dns.ReadFromSessionUDP(0xc421db83f0, 0xc421db1a00, 0x200, 0x200, 0x200, 0x200, 0x7f785cc9d3e0, 0xc421d979a0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/miekg/dns/udp.go:47 +0xb6
+github.com/docker/docker/vendor/github.com/miekg/dns.(*Server).readUDP(0xc421247d40, 0xc421db83f0, 0x77359400, 0x0, 0x0, 0x0, 0x0, 0x7f785cc23180, 0xc421d979a0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/miekg/dns/server.go:605 +0xbe
+github.com/docker/docker/vendor/github.com/miekg/dns.(*defaultReader).ReadUDP(0xc42041eac8, 0xc421db83f0, 0x77359400, 0x0, 0x0, 0x0, 0x0, 0x7f785cc23180, 0xc421d979a0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/miekg/dns/server.go:230 +0x48
+github.com/docker/docker/vendor/github.com/miekg/dns.(*Server).serveUDP(0xc421247d40, 0xc421db83f0, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/miekg/dns/server.go:478 +0x14b
+github.com/docker/docker/vendor/github.com/miekg/dns.(*Server).ActivateAndServe(0xc421247d40, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/miekg/dns/server.go:354 +0x24c
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*resolver).Start.func2(0xc421247d40)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/resolver.go:160 +0x2d
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*resolver).Start
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/resolver.go:159 +0x1c4
+
+goroutine 630 [select, 47 minutes]:
+github.com/docker/docker/daemon.(*Daemon).ProcessClusterNotifications(0xc420162000, 0x7f785cc40140, 0xc421caf0c0, 0xc420c0fe60)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/events.go:150 +0x117
+created by main.(*DaemonCli).start
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/daemon.go:292 +0x1a95
+
+goroutine 793 [semacquire, 47 minutes]:
+sync.runtime_notifyListWait(0xc422396710, 0xc400000003)
+	/usr/local/go/src/runtime/sema.go:507 +0x114
+sync.(*Cond).Wait(0xc422396700)
+	/usr/local/go/src/sync/cond.go:56 +0x82
+github.com/docker/docker/vendor/github.com/docker/go-events.(*Queue).next(0xc421d2ff50, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:103 +0x87
+github.com/docker/docker/vendor/github.com/docker/go-events.(*Queue).run(0xc421d2ff50)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:68 +0x34
+created by github.com/docker/docker/vendor/github.com/docker/go-events.NewQueue
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/go-events/queue.go:29 +0x14d
+
+goroutine 632 [chan receive, 47 minutes]:
+github.com/docker/docker/api/server.(*Server).serveAPI(0xc420141860, 0xc42183b580, 0x6)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:94 +0x14f
+github.com/docker/docker/api/server.(*Server).Wait(0xc420141860, 0xc421d626c0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:199 +0x31
+created by main.(*DaemonCli).start
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/daemon.go:300 +0x1afa
+
+goroutine 631 [chan receive, 47 minutes]:
+main.(*DaemonCli).setupConfigReloadTrap.func1(0xc421d68360, 0xc4203e9200)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/daemon_unix.go:66 +0x6b
+created by main.(*DaemonCli).setupConfigReloadTrap
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/daemon_unix.go:65 +0xc1
+
+goroutine 1299 [IO wait, 47 minutes]:
+internal/poll.runtime_pollWait(0x7f78589466d0, 0x72, 0xffffffffffffffff)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc42183a518, 0x72, 0xc42086dc00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc42183a518, 0xffffffffffffff00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Accept(0xc42183a500, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:335 +0x1e4
+net.(*netFD).accept(0xc42183a500, 0x7f7858a6b6c8, 0x0, 0x7f785b5ba131)
+	/usr/local/go/src/net/fd_unix.go:238 +0x44
+net.(*TCPListener).accept(0xc421db83f8, 0xc42086de50, 0x7f785a1ef22a, 0x8)
+	/usr/local/go/src/net/tcpsock_posix.go:136 +0x30
+net.(*TCPListener).AcceptTCP(0xc421db83f8, 0xc42041ead0, 0xc421db83f8, 0x0)
+	/usr/local/go/src/net/tcpsock.go:234 +0x4b
+github.com/docker/docker/vendor/github.com/miekg/dns.(*Server).serveTCP(0xc421247e10, 0xc421db83f8, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/miekg/dns/server.go:435 +0x127
+github.com/docker/docker/vendor/github.com/miekg/dns.(*Server).ActivateAndServe(0xc421247e10, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/miekg/dns/server.go:363 +0x18d
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*resolver).Start.func3(0xc421247e10)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/resolver.go:166 +0x2d
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork.(*resolver).Start
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/resolver.go:165 +0x24a
+
+goroutine 529 [IO wait, 47 minutes]:
+internal/poll.runtime_pollWait(0x7f7858a0feb0, 0x72, 0xffffffffffffffff)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc420136918, 0x72, 0xc42182ec00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc420136918, 0xffffffffffffff00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Accept(0xc420136900, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:335 +0x1e4
+net.(*netFD).accept(0xc420136900, 0x7f785a1ef22a, 0x30, 0x7f785c02ffa0)
+	/usr/local/go/src/net/fd_unix.go:238 +0x44
+net.(*TCPListener).accept(0xc42012e1f0, 0x7f785a2f46bc, 0x7f785c02ffa0, 0xc42142a390)
+	/usr/local/go/src/net/tcpsock_posix.go:136 +0x30
+net.(*TCPListener).Accept(0xc42012e1f0, 0xc420014018, 0x7f785be80340, 0x7f785cbf9030, 0x7f785c13b540)
+	/usr/local/go/src/net/tcpsock.go:247 +0x4b
+net/http.(*Server).Serve(0xc4203265b0, 0x7f785cc3e200, 0xc42012e1f0, 0x0, 0x0)
+	/usr/local/go/src/net/http/server.go:2695 +0x1b4
+github.com/docker/docker/api/server.(*HTTPServer).Serve(0xc420260d40, 0x10, 0xc4218637b0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:112 +0x42
+github.com/docker/docker/api/server.(*Server).serveAPI.func1(0xc4223750e0, 0xc420260d40)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:86 +0xac
+created by github.com/docker/docker/api/server.(*Server).serveAPI
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:83 +0x83
+
+goroutine 674 [IO wait]:
+internal/poll.runtime_pollWait(0x7f7858a0fdf0, 0x72, 0xffffffffffffffff)
+	/usr/local/go/src/runtime/netpoll.go:173 +0x59
+internal/poll.(*pollDesc).wait(0xc420136998, 0x72, 0xc422451c00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:85 +0xb0
+internal/poll.(*pollDesc).waitRead(0xc420136998, 0xffffffffffffff00, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:90 +0x3f
+internal/poll.(*FD).Accept(0xc420136980, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0)
+	/usr/local/go/src/internal/poll/fd_unix.go:335 +0x1e4
+net.(*netFD).accept(0xc420136980, 0x7f785a209278, 0x7f785c1757f8, 0xc422451e00)
+	/usr/local/go/src/net/fd_unix.go:238 +0x44
+net.(*UnixListener).accept(0xc420407200, 0xc422451e08, 0x7f785a1deba1, 0xc42184e080)
+	/usr/local/go/src/net/unixsock_posix.go:162 +0x34
+net.(*UnixListener).Accept(0xc420407200, 0xc422451e40, 0x7f785a4c564a, 0x7f785a238070, 0xc422451e80)
+	/usr/local/go/src/net/unixsock.go:241 +0x4b
+github.com/docker/docker/cmd/dockerd/hack.(*MalformedHostHeaderOverride).Accept(0xc4201aa1f0, 0x7f785c174fe8, 0xc42184e000, 0x7f785cc40200, 0xc422168210)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/cmd/dockerd/hack/malformed_host_override.go:116 +0x39
+net/http.(*Server).Serve(0xc420326680, 0x7f785cc325c0, 0xc4201aa1f0, 0x0, 0x0)
+	/usr/local/go/src/net/http/server.go:2695 +0x1b4
+github.com/docker/docker/api/server.(*HTTPServer).Serve(0xc420260e20, 0x10, 0xc421862fb0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:112 +0x42
+github.com/docker/docker/api/server.(*Server).serveAPI.func1(0xc4223750e0, 0xc420260e20)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:86 +0xac
+created by github.com/docker/docker/api/server.(*Server).serveAPI
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:83 +0x83
+
+goroutine 795 [select]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork/osl.removeUnusedPaths()
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/osl/namespace_linux.go:93 +0x30f
+created by github.com/docker/docker/vendor/github.com/docker/libnetwork/osl.createBasePath
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/osl/namespace_linux.go:78 +0x53
+
+goroutine 1419 [chan receive, 47 minutes]:
+github.com/docker/docker/vendor/github.com/docker/libnetwork.(*controller).AgentStopWait(0xc42011a400)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/docker/libnetwork/controller.go:383 +0x80
+github.com/docker/docker/daemon.(*Daemon).DaemonLeavesCluster(0xc420162000)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/daemon.go:544 +0x85
+github.com/docker/docker/daemon/cluster.(*Cluster).Leave(0xc420c400f0, 0x7f785b67cf01, 0x0, 0x0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/daemon/cluster/swarm.go:409 +0x387
+github.com/docker/docker/api/server/router/swarm.(*swarmRouter).leaveCluster(0xc421fd6de0, 0x7f78589db628, 0xc42236a240, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300, 0xc42236a180, 0x7f785b67cf11, 0x5)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/router/swarm/cluster_routes.go:48 +0x99
+github.com/docker/docker/api/server/router/swarm.(*swarmRouter).(github.com/docker/docker/api/server/router/swarm.leaveCluster)-fm(0x7f78589db628, 0xc42236a240, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300, 0xc42236a180, 0x7f78589db628, 0xc42236a240)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/router/swarm/cluster.go:29 +0x6b
+github.com/docker/docker/api/server/middleware.ExperimentalMiddleware.WrapHandler.func1(0x7f78589db628, 0xc42236a240, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300, 0xc42236a180, 0x7f78589db628, 0xc42236a240)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/middleware/experimental.go:27 +0xda
+github.com/docker/docker/api/server/middleware.VersionMiddleware.WrapHandler.func1(0x7f78589db628, 0xc42236a1e0, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300, 0xc42236a180, 0xc42046d8a8, 0x7f785a1eeac3)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/middleware/version.go:62 +0x425
+github.com/docker/docker/pkg/authorization.(*Middleware).WrapHandler.func1(0x7f78589db628, 0xc42236a1e0, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300, 0xc42236a180, 0xc42046da08, 0x7f785a1de2f7)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/pkg/authorization/middleware.go:59 +0x83d
+github.com/docker/docker/api/server/middleware.DebugRequestMiddleware.func1(0x7f78589db628, 0xc42236a1e0, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300, 0xc42236a180, 0x7f78589db628, 0xc42236a1e0)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/middleware/debug.go:25 +0x969
+github.com/docker/docker/api/server.(*Server).makeHTTPHandler.func1(0x7f785cc3e480, 0xc421d0c700, 0xc420c10300)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/server.go:137 +0x1c8
+net/http.HandlerFunc.ServeHTTP(0xc4219b9be0, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300)
+	/usr/local/go/src/net/http/server.go:1918 +0x46
+github.com/docker/docker/vendor/github.com/gorilla/mux.(*Router).ServeHTTP(0xc421d965f0, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/vendor/github.com/gorilla/mux/mux.go:103 +0x22d
+github.com/docker/docker/api/server.(*routerSwapper).ServeHTTP(0xc42216b2d0, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300)
+	/root/rpmbuild/BUILD/src/engine/.gopath/src/github.com/docker/docker/api/server/router_swapper.go:29 +0x72
+net/http.serverHandler.ServeHTTP(0xc420326680, 0x7f785cc3e480, 0xc421d0c700, 0xc420c10300)
+	/usr/local/go/src/net/http/server.go:2619 +0xb6
+net/http.(*conn).serve(0xc421c86460, 0x7f785cc40140, 0xc421d43a80)
+	/usr/local/go/src/net/http/server.go:1801 +0x71f
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:2720 +0x28a
